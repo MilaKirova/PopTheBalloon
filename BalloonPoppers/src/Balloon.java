@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Balloon {
 	
-	public static double Radius=10;
+	public static double Radius=15;
 	
 	public Color Color;
 	public boolean IsAlive;
@@ -22,6 +22,11 @@ public class Balloon {
 		if (!IsAlive) return;
 		
 		Location = Vec2.Add(Location, movementVec);
+	}
+	
+	public void Render() {
+		StdDraw.setPenColor(Color);
+		StdDraw.filledCircle(Location.X, Location.Y, Radius);
 	}
 	
 	public void Pop() {
